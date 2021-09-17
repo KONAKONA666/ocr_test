@@ -12,7 +12,7 @@ def open_image(path: Path) -> CV2Image:
 
 def select_bounding_boxes(data: OCRData,
                           threshold: float = 20.0,
-                          min_size: int = 2):
+                          min_size: int = 2) -> List[Tuple[int, int, int, int]]:
     n_boxes = len(data['text'])
     bounding_boxes = []
     for i in range(n_boxes):
@@ -26,7 +26,7 @@ def select_bounding_boxes(data: OCRData,
 
 def crop_image_with_text(image: CV2Image,
                          bounding_boxes: List[Tuple[int, int, int, int]],
-                         margin: int = 10):
+                         margin: int = 10) -> CV2Image:
     h, w = image.shape
     top_with_margin = min(
         min(bounding_boxes, key=lambda x: x[0])[0] - margin, 0)
