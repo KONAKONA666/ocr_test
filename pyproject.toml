@@ -5,7 +5,7 @@ description = ""
 authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.7"
 pytesseract = "^0.3.8"
 pathlib = "^1.0.1"
 deskew = "^0.10.33"
