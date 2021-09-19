@@ -42,6 +42,13 @@ FORM_PREPROCESS_PIPELINE: List[PipelineFunction] = [
 
 
 def select_pipeline(image: CV2Image) -> List[PipelineFunction]:
+    '''
+    identifies which pipline should be used for ties image
+    based on fraction of horizontal lines, underlines(deleting them significantly improves accuracy).
+    :param image:
+    :return: List[PipelineFunction]
+    '''
+
     lines = get_fraction_of_lines(image, PLAIN_PREPROCESS_PIPELINE)
     if lines >= 0.01:
         return FORM_PREPROCESS_PIPELINE
