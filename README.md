@@ -4,7 +4,7 @@ Task Nexus FrontierTech
 
 # Coding task, Tesseract OCR.
 ##
-
+Install and run
 Requires poppler 
 https://poppler.freedesktop.org/
 
